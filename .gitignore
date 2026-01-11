@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # System Tools & Helper Scripts
 System-Tools/
 *.py
@@ -16,7 +15,6 @@ Thumbs.db
 
 # Environment
 .env
-.agent/
 .gemini/
 
 # Node
@@ -44,6 +42,3 @@ run_git.bat
 # Sub-projects
 palette-studio/
 resume-studio/
-=======
-node_modules
->>>>>>> 8b3652e37dd5738d8d78f910bf4f686ac2ee66e0
