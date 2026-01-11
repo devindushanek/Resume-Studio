@@ -35,6 +35,54 @@
             --shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
         }
 
+        .conflict-alert {
+            background: rgba(250, 75, 6, 0.08);
+            border-left: 4px solid var(--sams-orange);
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .conflict-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .conflict-icon {
+            font-size: 1.2rem;
+        }
+
+        .conflict-title {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: var(--sams-orange);
+        }
+
+        .recommendation-box {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .recommendation-tag {
+            background: var(--sams-teal);
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -234,6 +282,25 @@
 
         <section>
             <h2>Brand Essence</h2>
+
+            <!-- Conflict Alert: Brand Vibe -->
+            <div class="conflict-alert">
+                <div class="conflict-header">
+                    <span class="conflict-icon">⚠️</span>
+                    <span class="conflict-title">Conflict: Brand Vibe</span>
+                </div>
+                <p style="font-size: 0.9rem;">The Legacy Plan (Gamma) focuses on a <strong>"High-Concept
+                        Wellness/Spa"</strong> vibe. Our current roadmap prioritizes <strong>"First Job
+                        Nostalgia"</strong>.</p>
+                <div class="recommendation-box">
+                    <span class="recommendation-tag">Antigravity Suggestion</span>
+                    <p style="font-size: 0.85rem; font-style: italic;"><strong>Nostalgic Core with Premium
+                            Accents.</strong> Keep the "Nostalgia" vibe for the Snack Bar and Rentals (Year 1-2). Use
+                        the "Wellness/Spa" aesthetic as a sub-brand for the Shoreline Studio and Thermal Spa in Year 3+
+                        to differentiate the high-margin services.</p>
+                </div>
+            </div>
+
             <div class="grid">
                 <div class="card">
                     <h3>The Vibe</h3>
@@ -281,6 +348,8 @@
         <div class="source-box">
             <h4>Source Documents</h4>
             <a href="Branding_Identity.txt" class="source-link">📄 Sam's Branding & Identity Full Brief</a>
+            <a href="https://gamma.app/docs/Sams-Snack-Bar-Legacy-Business-Plan-0zhigtfdxvgy8e7" class="source-link">📄
+                Legacy Business Plan (Gamma)</a>
         </div>
     </div>
 

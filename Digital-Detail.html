@@ -35,6 +35,54 @@
             --shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
         }
 
+        .conflict-alert {
+            background: rgba(250, 75, 6, 0.08);
+            border-left: 4px solid var(--sams-orange);
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .conflict-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .conflict-icon {
+            font-size: 1.2rem;
+        }
+
+        .conflict-title {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: var(--sams-orange);
+        }
+
+        .recommendation-box {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .recommendation-tag {
+            background: var(--sams-teal);
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -200,6 +248,25 @@
 
         <section>
             <h2>The Tech Stack</h2>
+
+            <!-- Conflict Alert: Digital Scope -->
+            <div class="conflict-alert">
+                <div class="conflict-header">
+                    <span class="conflict-icon">⚠️</span>
+                    <span class="conflict-title">Conflict: Digital Scope</span>
+                </div>
+                <p style="font-size: 0.9rem;">The Legacy Plan (Gamma) includes <strong>"Wellness Memberships"</strong>
+                    and <strong>"Indigenous-led Booking Modules"</strong>. Our current roadmap focuses on <strong>"Core
+                        POS & Rental Automation"</strong>.</p>
+                <div class="recommendation-box">
+                    <span class="recommendation-tag">Antigravity Suggestion</span>
+                    <p style="font-size: 0.85rem; font-style: italic;"><strong>Modular Expansion.</strong> Build the
+                        core VisitSams.ca platform on a modular architecture (e.g., Shopify + Custom Apps). Year 1 focus
+                        is POS/Rentals. Year 2 should add the "Membership" and "Indigenous Partnership" modules as the
+                        Shoreline Studio launches.</p>
+                </div>
+            </div>
+
             <div class="grid">
                 <div class="card">
                     <h3>Guest Experience</h3>
@@ -238,6 +305,15 @@
                 </div>
             </div>
         </section>
+
+        <div class="source-box"
+            style="background: rgba(30, 200, 206, 0.05); border: 1px dashed var(--sams-teal); padding: 20px; border-radius: 16px; margin-top: 40px;">
+            <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--sams-teal); margin-bottom: 10px;">
+                Source Documents</h4>
+            <a href="https://gamma.app/docs/Sams-Snack-Bar-Legacy-Business-Plan-0zhigtfdxvgy8e7" class="source-link"
+                style="color: var(--text-main); text-decoration: none; font-size: 0.9rem; display: block; margin-bottom: 5px;">📄
+                Legacy Business Plan (Gamma)</a>
+        </div>
     </div>
 
     <script>

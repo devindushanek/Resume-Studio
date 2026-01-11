@@ -35,6 +35,54 @@
             --shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
         }
 
+        .conflict-alert {
+            background: rgba(250, 75, 6, 0.08);
+            border-left: 4px solid var(--sams-orange);
+            padding: 20px;
+            border-radius: 16px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .conflict-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .conflict-icon {
+            font-size: 1.2rem;
+        }
+
+        .conflict-title {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: var(--sams-orange);
+        }
+
+        .recommendation-box {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .recommendation-tag {
+            background: var(--sams-teal);
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -220,6 +268,25 @@
 
         <section>
             <h2>Partnership Structure</h2>
+
+            <!-- Conflict Alert: Ownership Structure -->
+            <div class="conflict-alert">
+                <div class="conflict-header">
+                    <span class="conflict-icon">⚠️</span>
+                    <span class="conflict-title">Conflict: Ownership Structure</span>
+                </div>
+                <p style="font-size: 0.9rem;">The Legacy Plan (Gamma) proposes a <strong>"Family-led structure"</strong>
+                    with <strong>Maddox</strong> as Youth Principal. This contrasts with our current 4-partner
+                    professional split.</p>
+                <div class="recommendation-box">
+                    <span class="recommendation-tag">Antigravity Suggestion</span>
+                    <p style="font-size: 0.85rem; font-style: italic;"><strong>Professional Split with Youth
+                            Mentorship.</strong> Maintain the 10/40/25/25 professional split for legal and financial
+                        stability. Integrate Maddox as a "Youth Principal" under Devin's mentorship to handle
+                        digital/youth engagement without altering the equity structure.</p>
+                </div>
+            </div>
+
             <div class="grid">
                 <div class="card">
                     <h3>Ownership Split</h3>
@@ -229,18 +296,6 @@
                         <li><strong>Randy (25%):</strong> Facility Management, Logistics, & Maintenance.</li>
                         <li><strong>Tara (25%):</strong> Community Engagement, Events, & Studio Programming.</li>
                     </ul>
-
-                    <!-- Conflict Alert: Legacy Plan -->
-                    <div
-                        style="background: rgba(250, 75, 6, 0.1); border-left: 4px solid var(--sams-orange); padding: 15px; border-radius: 12px; margin-top: 20px;">
-                        <strong style="color: var(--sams-orange); font-size: 0.85rem; text-transform: uppercase;">⚠️
-                            Conflict Alert: Legacy Plan</strong>
-                        <p style="font-size: 0.85rem; margin-top: 8px; color: var(--text-main);">The Legacy Plan
-                            proposes a <strong>"Family-led structure"</strong> with <strong>Maddox</strong> as Youth
-                            Principal. This contrasts with our current 4-partner professional split.</p>
-                        <p style="font-size: 0.8rem; font-style: italic; margin-top: 5px; color: var(--text-muted);">
-                            Resolution Needed: How do the partners integrate with the Maddox/Family-led vision?</p>
-                    </div>
                 </div>
                 <div class="card">
                     <h3>Operational Rhythm</h3>
@@ -250,10 +305,26 @@
             </div>
         </section>
 
+        <section>
+            <h2>Riley's Foundation</h2>
+            <div class="card" style="border-color: var(--sams-teal); background: rgba(30, 200, 206, 0.05);">
+                <h3>Core Pillar: Youth & Environment</h3>
+                <p>The Legacy Plan identifies Riley's Foundation as a core pillar. This integration is pending but will
+                    focus on:</p>
+                <ul class="partner-list">
+                    <li><strong>Youth Grants:</strong> Scholarships for local Clearwater Lake students.</li>
+                    <li><strong>Lake Protection:</strong> Environmental initiatives for water quality.</li>
+                    <li><strong>Animal Welfare:</strong> Support for local shelters and wildlife.</li>
+                </ul>
+            </div>
+        </section>
+
         <div class="source-box">
             <h4>Source Documents</h4>
             <a href="Context-Exports/Lodge and Sam's - Sam's Snack Bar structure.txt" class="source-link">📄 Sam's
                 Operational Structure & Roles</a>
+            <a href="https://gamma.app/docs/Sams-Snack-Bar-Legacy-Business-Plan-0zhigtfdxvgy8e7" class="source-link">📄
+                Legacy Business Plan (Gamma)</a>
         </div>
     </div>
 
