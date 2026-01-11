@@ -1,0 +1,14 @@
+import pandas as pd
+import os
+
+file_path = r"c:\Users\devin\Documents\Professional\DevLabs\AI Agent Workspace\Sams-Snack-Bar-Planning\Financials\Snack Bar 5 year Financials.xlsx"
+
+if os.path.exists(file_path):
+    xl = pd.ExcelFile(file_path)
+    print(f"Sheets: {xl.sheet_names}")
+    for sheet in xl.sheet_names:
+        df = pd.read_excel(file_path, sheet_name=sheet)
+        print(f"\n--- Sheet: {sheet} ---")
+        print(df.head(20).to_string())
+else:
+    print("File not found.")

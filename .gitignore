@@ -39,3 +39,7 @@ run_git.bat
 *_result*.txt
 *_debug*.txt
 *_check*.txt
+
+# Sub-projects
+palette-studio/
+resume-studio/

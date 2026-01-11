@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam's 2025 Inventory & Services Analysis</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #e2e8f0;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: #64748b;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-family: monospace;
+            margin-bottom: 1rem;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .clickable-row {
+            cursor: pointer;
+            transition: background-color 0.1s;
+        }
+
+        .clickable-row:hover {
+            background-color: #e2e8f0;
+        }
+
+        .currency {
+            font-family: monospace;
+            text-align: right;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .alert-box {
+            background-color: #fff1f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .alert-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .alert-list {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        < !DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sam's 2025 Inventory & Services Analysis</title>
+ <style> :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #e2e8f0;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: #64748b;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-family: monospace;
+            margin-bottom: 1rem;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .clickable-row {
+            cursor: pointer;
+            transition: background-color 0.1s;
+        }
+
+        .clickable-row:hover {
+            background-color: #e2e8f0;
+        }
+
+        .currency {
+            font-family: monospace;
+            text-align: right;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .alert-box {
+            background-color: #fff1f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .alert-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .alert-list {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .filter-tag {
+            display: inline-flex;
+            align-items: center;
+            background: #e2e8f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            color: #475569;
+        }
+
+        .filter-tag button {
+            background: none;
+            border: none;
+            color: #475569;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .photo-card {
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.1s ease-in-out;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Sam's 2025 Inventory & Services Analysis</h1>
+            <p>Paste your Excel data below to generate a detailed cost and earnings report.</p>
+        </header>
+
+        <div class="card" id="input-section">
+            <h3>1. Paste Data</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem;">Copy your data from Excel (including headers) and paste
+                it here. Ensure columns include: <strong>Category, Item, Quantity, Units Per Case, Unit Cost, Sales
+                    Price</strong>. </p>
+            <textarea id="dataInput" placeholder="Paste Excel data here..."></textarea>
+            <button onclick="processData()">Analyze Data</button>
+            <div id="error-msg" style="color: red; margin-top: 0.5rem; display: none;"></div>
+        </div>
+
+        <div id="results-section" class="hidden">
+            <div id="discrepancy-container" class="hidden">
+                <div class="card" style="border-left: 4px solid #f59e0b;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div>
+                            <h3 style="color: #b45309; margin-top: 0;">⚠️ Data Discrepancies & Solutions</h3>
+                            <p style="font-size: 0.9rem; color: #78350f; margin: 0;"> The following items have missing
+                                data. Review the solutions below. </p>
+                        </div>
+                        <button onclick="toggleTriangulation()"
+                            style="background: #fff7ed; color: #b45309; border: 1px solid #fed7aa; padding: 0.5rem 1rem; font-size: 0.85rem; cursor: pointer; border-radius: 4px;">
+                            🍦 Estimate Ice Cream Sales </button>
+                    </div>
+
+                    <div id="triangulation-tool" class="hidden"
+                        style="background: #fff; padding: 1rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; margin-bottom: 1rem;">
+                        <h4 style="margin-top: 0; color: #1e293b;">🍦 Ice Cream Revenue Triangulation</h4>
+                        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem;"> Enter your <strong>Total
+                                Ice Cream Revenue</strong> (from POS/Bank) and average <strong>Price Per Cone</strong>.
+                            We'll calculate the estimated sales value per tub based on your total volume.
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 1rem; align-items: end;">
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.25rem;">Total
+                                    Ice Cream Revenue ($)</label>
+                                <input type="number" id="total-ice-revenue" placeholder="e.g. 15000"
+                                    style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 0.25rem;">
+                            </div>
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.25rem;">Avg.
+                                    Price Per Cone ($)</label>
+                                <input type="number" id="price-per-cone" value="4.25" step="0.25"
+                                    style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 0.25rem;">
+                            </div>
+                            <button onclick="applyTriangulation()"
+                                style="background: #2563eb; color: white; border: none; padding: 0.6rem 1rem; border-radius: 0.25rem; cursor: pointer;">
+                                Apply Estimates </button>
+                        </div>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
+                            <thead>
+                                <tr style="background-color: #fff7ed; border-bottom: 2px solid #fed7aa;">
+                                    <th style="text-align: left; padding: 0.75rem; color: #9a3412;">Category</th>
+                                    <th style="text-align: left; padding: 0.75rem; color: #9a3412;">Item</th>
+                                    <th style="text-align: left; padding: 0.75rem; color: #9a3412;">Issue</th>
+                                    <th style="text-align: left; padding: 0.75rem; color: #9a3412;">Suggested Solution
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-revenue">$0.00</div>
+                    <div class="stat-label">Total Projected Revenue</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="total-cost">$0.00</div>
+                    <div class="stat-label">Total Cost</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="total-profit">$0.00</div>
+                    <div class="stat-label">Total Earnings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="total-items">0</div>
+                    <div class="stat-label">Total Units Sold</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="tabs">
+                    <div class="tab active" onclick="switchTab('category')">Analysis by Category</div>
+                    <div class="tab" onclick="switchTab('item')">Detailed Item List</div>
+                    <div class="tab" onclick="switchTab('gallery')">Photo Gallery</div>
+                </div>
+
+                <div id="category-view">
+                    <h3>Category Performance</h3>
+                    <p style="font-size: 0.875rem; color: #64748b; margin-bottom: 1rem;">Click on a category to filter
+                        the item list.</p>
+                    <div style="overflow-x: auto;">
+                        <table id="category-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th class="currency">Total Units</th>
+                                    <th class="currency">Total Cost</th>
+                                    <th class="currency">Total Revenue</th>
+                                    <th class="currency">Total Earnings</th>
+                                    <th class="currency">Margin %</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="item-view" class="hidden">
+                    <h3>Item Breakdown</h3>
+                    <div id="active-filter" class="hidden"></div>
+                    <div style="overflow-x: auto;">
+                        <table id="item-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Item</th>
+                                    <th class="currency">Cases</th>
+                                    <th class="currency">Units/Case</th>
+                                    <th class="currency">Total Units</th>
+                                    <th class="currency">Unit Cost</th>
+                                    <th class="currency">Unit Price</th>
+                                    <th class="currency">Total Cost</th>
+                                    <th class="currency">Total Revenue</th>
+                                    <th class="currency">Total Earnings</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="gallery-view" class="hidden">
+                    <h3>Inventory Photo Documentation</h3>
+                    <p style="font-size: 0.875rem; color: #64748b; margin-bottom: 1rem;">
+                        Site photos from January 11, 2026. Click to view full size.
+                    </p>
+
+                    <h4
+                        style="margin-top: 20px; color: #475569; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">
+                        Inventory Scans</h4>
+                    <div class="photo-grid">
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155449145.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155449145.jpg" loading="lazy"></div>
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155457489.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155457489.jpg" loading="lazy"></div>
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155503208.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155503208.jpg" loading="lazy"></div>
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155509300.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155509300.jpg" loading="lazy"></div>
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155516636.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155516636.jpg" loading="lazy"></div>
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155523647.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155523647.jpg" loading="lazy"></div>
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155529724.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155529724.jpg" loading="lazy"></div>
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155537845.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155537845.jpg" loading="lazy"></div>
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155547013.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155547013.jpg" loading="lazy"></div>
+                        <div class="photo-card"
+                            onclick="window.open('Inventory-Scans/PXL_20260111_155554698.jpg', '_blank')"><img
+                                src="Inventory-Scans/PXL_20260111_155554698.jpg" loading="lazy"></div>
+                    </div>
+
+                    <h4
+                        style="margin-top: 20px; color: #475569; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px;">
+                        General Inventory</h4>
+                    <div class="photo-grid">
+                        <div class="photo-card" onclick="window.open('PXL_20260111_161402628.jpg', '_blank')"><img
+                                src="PXL_20260111_161402628.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_161408070.jpg', '_blank')"><img
+                                src="PXL_20260111_161408070.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_161614683.jpg', '_blank')"><img
+                                src="PXL_20260111_161614683.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_161623313.jpg', '_blank')"><img
+                                src="PXL_20260111_161623313.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_161631930.jpg', '_blank')"><img
+                                src="PXL_20260111_161631930.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_161640702.jpg', '_blank')"><img
+                                src="PXL_20260111_161640702.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_161649980.jpg', '_blank')"><img
+                                src="PXL_20260111_161649980.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_161659234.jpg', '_blank')"><img
+                                src="PXL_20260111_161659234.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_161709897.jpg', '_blank')"><img
+                                src="PXL_20260111_161709897.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163431840.jpg', '_blank')"><img
+                                src="PXL_20260111_163431840.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163443702.jpg', '_blank')"><img
+                                src="PXL_20260111_163443702.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163651034.jpg', '_blank')"><img
+                                src="PXL_20260111_163651034.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163658872.jpg', '_blank')"><img
+                                src="PXL_20260111_163658872.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163726894.jpg', '_blank')"><img
+                                src="PXL_20260111_163726894.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163733944.jpg', '_blank')"><img
+                                src="PXL_20260111_163733944.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163744384.jpg', '_blank')"><img
+                                src="PXL_20260111_163744384.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163751691.jpg', '_blank')"><img
+                                src="PXL_20260111_163751691.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163751855.jpg', '_blank')"><img
+                                src="PXL_20260111_163751855.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163813710.jpg', '_blank')"><img
+                                src="PXL_20260111_163813710.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_163825674.jpg', '_blank')"><img
+                                src="PXL_20260111_163825674.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180733895.jpg', '_blank')"><img
+                                src="PXL_20260111_180733895.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180739131.jpg', '_blank')"><img
+                                src="PXL_20260111_180739131.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180745620.jpg', '_blank')"><img
+                                src="PXL_20260111_180745620.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180751379.jpg', '_blank')"><img
+                                src="PXL_20260111_180751379.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180756143.jpg', '_blank')"><img
+                                src="PXL_20260111_180756143.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180800683.jpg', '_blank')"><img
+                                src="PXL_20260111_180800683.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180805663.jpg', '_blank')"><img
+                                src="PXL_20260111_180805663.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180810153.jpg', '_blank')"><img
+                                src="PXL_20260111_180810153.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180820256.jpg', '_blank')"><img
+                                src="PXL_20260111_180820256.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180826829.jpg', '_blank')"><img
+                                src="PXL_20260111_180826829.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180832196.jpg', '_blank')"><img
+                                src="PXL_20260111_180832196.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180836851.jpg', '_blank')"><img
+                                src="PXL_20260111_180836851.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180842960.jpg', '_blank')"><img
+                                src="PXL_20260111_180842960.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180848436.jpg', '_blank')"><img
+                                src="PXL_20260111_180848436.jpg" loading="lazy"></div>
+                        <div class="photo-card" onclick="window.open('PXL_20260111_180854850.jpg', '_blank')"><img
+                                src="PXL_20260111_180854850.jpg" loading="lazy"></div>
+                    </div>
+                    activeCategory=null;
+                    }
+
+                    </script>
+</body>
+
+</html>
