@@ -1,0 +1,64 @@
+{
+    // ============================================
+    // ANTIGRAVITY CHAT-FOCUSED SETTINGS PROFILE
+    // ============================================
+    // Optimized for minimal editor distractions and maximum chat focus
+    // --- Editor Tab Management ---
+    // Prevent files from staying open in preview mode
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.enablePreviewFromCodeNavigation": false,
+    // Limit the number of tabs that can be open
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 3,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.excludeDirty": true,
+    // Auto-close behavior
+    "workbench.editor.closeEmptyGroups": true,
+    "workbench.editor.closeOnFileDelete": true,
+    // --- Panel & Sidebar Settings ---
+    // Keep the side panel (chat) open and prominent
+    "workbench.panel.defaultLocation": "right",
+    "workbench.sideBar.location": "left",
+    // Maximize panel area
+    "workbench.panel.opensMaximized": "always",
+    // --- Gemini Code Assist Settings ---
+    // Disable inline suggestions to reduce distractions
+    "geminicodeassist.inlineSuggestions.enableAutoList": false,
+    "geminicodeassist.nextEditPredictions.enable": false,
+    // --- Activity Bar & Status Bar ---
+    // Hide activity bar to save space (optional - can toggle with Ctrl+B)
+    // "workbench.activityBar.visible": false,
+    // --- Editor Behavior ---
+    // Don't automatically reveal files in explorer
+    "explorer.autoReveal": false,
+    "explorer.autoRevealExclude": {
+        "**/node_modules": true,
+        "**/.git": true
+    },
+    // --- Window Behavior ---
+    // Open files in current window instead of new window
+    "window.openFilesInNewWindow": "off",
+    "window.openFoldersInNewWindow": "off",
+    // --- Search Settings ---
+    // Use quick open instead of opening new tabs
+    "search.quickOpen.includeHistory": true,
+    // --- Minimap ---
+    // Disable minimap to save space
+    "editor.minimap.enabled": false,
+    // --- Breadcrumbs ---
+    // Optional: disable to save space
+    "breadcrumbs.enabled": false,
+    // --- Word Wrap ---
+    "editor.wordWrap": "on",
+    // --- Performance Optimizations ---
+    // Reduce file watching for better performance
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/.hg/store/**": true,
+        "**/dist/**": true,
+        "**/build/**": true
+    }
+}

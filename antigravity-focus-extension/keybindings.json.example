@@ -1,0 +1,81 @@
+// Keybindings for Antigravity Focus Mode
+// Place this in your VS Code keybindings.json for quick access
+// File -> Preferences -> Keyboard Shortcuts -> Open Keyboard Shortcuts (JSON)
+[
+  // ========================================
+  // ANTIGRAVITY FOCUS MODE SHORTCUTS
+  // ========================================
+  
+  // Toggle Focus Mode (auto-close tabs)
+  {
+    "key": "ctrl+shift+f12",
+    "command": "antigravityFocus.toggle"
+  },
+  
+  // Close all editors immediately
+  {
+    "key": "ctrl+shift+w",
+    "command": "antigravityFocus.closeAllEditors"
+  },
+  
+  // Maximize chat panel
+  {
+    "key": "ctrl+shift+c",
+    "command": "antigravityFocus.maximizeChat"
+  },
+  
+  // ========================================
+  // QUICK LAYOUT SHORTCUTS
+  // ========================================
+  
+  // Toggle sidebar (give more space to chat)
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  
+  // Toggle panel maximized
+  {
+    "key": "ctrl+shift+m",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  
+  // Close active editor quickly
+  {
+    "key": "escape",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorTextFocus && !editorHasSelection && !findInputFocussed && !replaceInputFocussed"
+  },
+  
+  // Focus on Gemini chat
+  {
+    "key": "ctrl+shift+g",
+    "command": "geminicodeassist.showChatView"
+  },
+  
+  // ========================================
+  // ZEN MODE (Distraction-free)
+  // ========================================
+  
+  // Enter Zen Mode
+  {
+    "key": "ctrl+k z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  
+  // ========================================
+  // QUICK ACTIONS
+  // ========================================
+  
+  // Close all editors in all groups
+  {
+    "key": "ctrl+k ctrl+w",
+    "command": "workbench.action.closeAllEditors"
+  },
+  
+  // Close all editors except active
+  {
+    "key": "ctrl+k ctrl+shift+w",
+    "command": "workbench.action.closeOtherEditors"
+  }
+]

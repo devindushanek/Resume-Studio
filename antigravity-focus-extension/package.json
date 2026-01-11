@@ -1,0 +1,98 @@
+{
+    "name": "antigravity-focus",
+    "displayName": "Antigravity Focus Mode",
+    "description": "Auto-closes editor tabs and maximizes chat panel for a focused AI chat experience",
+    "version": "1.0.0",
+    "publisher": "devin",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "antigravityFocus.enable",
+                "title": "Antigravity Focus: Enable Focus Mode"
+            },
+            {
+                "command": "antigravityFocus.disable",
+                "title": "Antigravity Focus: Disable Focus Mode"
+            },
+            {
+                "command": "antigravityFocus.toggle",
+                "title": "Antigravity Focus: Toggle Focus Mode"
+            },
+            {
+                "command": "antigravityFocus.closeAllEditors",
+                "title": "Antigravity Focus: Close All Editors Now"
+            },
+            {
+                "command": "antigravityFocus.maximizeChat",
+                "title": "Antigravity Focus: Maximize Chat Panel"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "antigravityFocus.toggle",
+                "key": "ctrl+shift+f12",
+                "mac": "cmd+shift+f12"
+            },
+            {
+                "command": "antigravityFocus.closeAllEditors",
+                "key": "ctrl+shift+w",
+                "mac": "cmd+shift+w"
+            }
+        ],
+        "configuration": {
+            "title": "Antigravity Focus",
+            "properties": {
+                "antigravityFocus.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable automatic tab closing and focus mode"
+                },
+                "antigravityFocus.autoCloseDelay": {
+                    "type": "number",
+                    "default": 2000,
+                    "description": "Delay in milliseconds before auto-closing a newly opened tab"
+                },
+                "antigravityFocus.keepOpenPatterns": {
+                    "type": "array",
+                    "default": [
+                        "**/.vscode/settings.json",
+                        "**/keybindings.json"
+                    ],
+                    "description": "Glob patterns for files to keep open (never auto-close)"
+                },
+                "antigravityFocus.autoMaximizeChat": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Automatically maximize the chat/panel area on startup"
+                },
+                "antigravityFocus.closeTabs": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Automatically close editor tabs when opened"
+                },
+                "antigravityFocus.showNotifications": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Show notifications when tabs are auto-closed"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.80.0",
+        "@vscode/vsce": "^2.22.0"
+    }
+}

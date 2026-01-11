@@ -630,150 +630,140 @@
                     <tr style="background: rgba(64, 173, 72, 0.1); font-weight: 800;">
                         <td>TOTAL GROSS REVENUE</td>
                         <td class="highlight">$330,000</td>
-                        <td class="highlight">$417,000</td>
-                        <td class="highlight">$500,000</td>
-                        <td class="highlight">$620,000</td>
-                        <td class="highlight">$730,000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+                        </p>
 
-        <!-- Monthly Breakdown Section -->
-        <section>
-            <h2>Monthly Detailed Projections (Years 1-2)</h2>
-            <p style="margin-bottom: 20px;">Toggle between **Cash Flow** (P&L) and **Revenue Mix** (Source Breakdown).
-            </p>
+                        <div class="tab-container">
+                            <div class="view-controls">
+                                <div class="tab-buttons">
+                                    <button class="tab-btn active" onclick="switchTab(event, 'year1')">Year 1
+                                        ($330k)</button>
+                                    <button class="tab-btn" onclick="switchTab(event, 'year2')">Year 2 ($417k)</button>
+                                </div>
+                                <div class="view-toggle">
+                                    <button class="toggle-btn active" onclick="switchView(event, 'cashflow')">Cash
+                                        Flow</button>
+                                    <button class="toggle-btn" onclick="switchView(event, 'revmix')">Revenue
+                                        Mix</button>
+                                </div>
+                            </div>
 
-            <div class="tab-container">
-                <div class="view-controls">
-                    <div class="tab-buttons">
-                        <button class="tab-btn active" onclick="switchTab(event, 'year1')">Year 1 ($330k)</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'year2')">Year 2 ($417k)</button>
-                    </div>
-                    <div class="view-toggle">
-                        <button class="toggle-btn active" onclick="switchView(event, 'cashflow')">Cash Flow</button>
-                        <button class="toggle-btn" onclick="switchView(event, 'revmix')">Revenue Mix</button>
-                    </div>
-                </div>
-
-                <!-- Year 1 Content -->
-                <div id="year1" class="tab-content active">
-                    <!-- Year 1 Cash Flow -->
-                    <div class="view-pane cashflow active">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Month</th>
-                                    <th>Total Revenue</th>
-                                    <th>COGS (32%)</th>
-                                    <th>Labour (36%)</th>
-                                    <th>Fixed OpEx</th>
-                                    <th>EBITDA</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>January</td>
-                                    <td>$12,000</td>
-                                    <td>($3,840)</td>
-                                    <td>($4,320)</td>
-                                    <td>($6,420)</td>
-                                    <td style="color: var(--sams-orange);">($2,580)</td>
-                                </tr>
-                                <tr>
-                                    <td>February</td>
-                                    <td>$13,000</td>
-                                    <td>($4,160)</td>
-                                    <td>($4,680)</td>
-                                    <td>($6,420)</td>
-                                    <td style="color: var(--sams-orange);">($2,260)</td>
-                                </tr>
-                                <tr>
-                                    <td>March</td>
-                                    <td>$15,000</td>
-                                    <td>($4,800)</td>
-                                    <td>($5,400)</td>
-                                    <td>($6,420)</td>
-                                    <td style="color: var(--sams-orange);">($1,620)</td>
-                                </tr>
-                                <tr>
-                                    <td>April</td>
-                                    <td>$18,000</td>
-                                    <td>($5,760)</td>
-                                    <td>($6,480)</td>
-                                    <td>($6,420)</td>
-                                    <td style="color: var(--sams-orange);">($660)</td>
-                                </tr>
-                                <tr>
-                                    <td>May</td>
-                                    <td>$32,000</td>
-                                    <td>($10,240)</td>
-                                    <td>($11,520)</td>
-                                    <td>($6,420)</td>
-                                    <td class="highlight">$3,820</td>
-                                </tr>
-                                <tr>
-                                    <td>June</td>
-                                    <td>$55,000</td>
-                                    <td>($17,600)</td>
-                                    <td>($19,800)</td>
-                                    <td>($6,420)</td>
-                                    <td class="highlight">$11,180</td>
-                                </tr>
-                                <tr>
-                                    <td>July</td>
-                                    <td>$65,000</td>
-                                    <td>($20,800)</td>
-                                    <td>($23,400)</td>
-                                    <td>($6,420)</td>
-                                    <td class="highlight">$14,380</td>
-                                </tr>
-                                <tr>
-                                    <td>August</td>
-                                    <td>$60,000</td>
-                                    <td>($19,200)</td>
-                                    <td>($21,600)</td>
-                                    <td>($6,420)</td>
-                                    <td class="highlight">$12,780</td>
-                                </tr>
-                                <tr>
-                                    <td>September</td>
-                                    <td>$28,000</td>
-                                    <td>($8,960)</td>
-                                    <td>($10,080)</td>
-                                    <td>($6,420)</td>
-                                    <td class="highlight">$2,540</td>
-                                </tr>
-                                <tr>
-                                    <td>October</td>
-                                    <td>$14,000</td>
-                                    <td>($4,480)</td>
-                                    <td>($5,040)</td>
-                                    <td>($6,420)</td>
-                                    <td style="color: var(--sams-orange);">($1,940)</td>
-                                </tr>
-                                <tr>
-                                    <td>November</td>
-                                    <td>$9,000</td>
-                                    <td>($2,880)</td>
-                                    <td>($3,240)</td>
-                                    <td>($6,420)</td>
-                                    <td style="color: var(--sams-orange);">($3,540)</td>
-                                </tr>
-                                <tr>
-                                    <td>December</td>
-                                    <td>$9,000</td>
-                                    <td>($2,880)</td>
-                                    <td>($3,240)</td>
-                                    <td>($6,420)</td>
-                                    <td style="color: var(--sams-orange);">($3,540)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                            <!-- Year 1 Content -->
+                            <div id="year1" class="tab-content active">
+                                <!-- Year 1 Cash Flow -->
+                                <div class="view-pane cashflow active">
+                                    <table class="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Month</th>
+                                                <th>Total Revenue</th>
+                                                <th>COGS (32%)</th>
+                                                <th>Labour (36%)</th>
+                                                <th>Fixed OpEx</th>
+                                                <th>EBITDA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>January</td>
+                                                <td>$12,000</td>
+                                                <td>($3,840)</td>
+                                                <td>($4,320)</td>
+                                                <td>($6,420)</td>
+                                                <td style="color: var(--sams-orange);">($2,580)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>February</td>
+                                                <td>$13,000</td>
+                                                <td>($4,160)</td>
+                                                <td>($4,680)</td>
+                                                <td>($6,420)</td>
+                                                <td style="color: var(--sams-orange);">($2,260)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>March</td>
+                                                <td>$15,000</td>
+                                                <td>($4,800)</td>
+                                                <td>($5,400)</td>
+                                                <td>($6,420)</td>
+                                                <td style="color: var(--sams-orange);">($1,620)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>April</td>
+                                                <td>$18,000</td>
+                                                <td>($5,760)</td>
+                                                <td>($6,480)</td>
+                                                <td>($6,420)</td>
+                                                <td style="color: var(--sams-orange);">($660)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>May</td>
+                                                <td>$32,000</td>
+                                                <td>($10,240)</td>
+                                                <td>($11,520)</td>
+                                                <td>($6,420)</td>
+                                                <td class="highlight">$3,820</td>
+                                            </tr>
+                                            <tr>
+                                                <td>June</td>
+                                                <td>$55,000</td>
+                                                <td>($17,600)</td>
+                                                <td>($19,800)</td>
+                                                <td>($6,420)</td>
+                                                <td class="highlight">$11,180</td>
+                                            </tr>
+                                            <tr>
+                                                <td>July</td>
+                                                <td>$65,000</td>
+                                                <td>($20,800)</td>
+                                                <td>($23,400)</td>
+                                                <td>($6,420)</td>
+                                                <td class="highlight">$14,380</td>
+                                            </tr>
+                                            <tr>
+                                                <td>August</td>
+                                                <td>$60,000</td>
+                                                <td>($19,200)</td>
+                                                <td>($21,600)</td>
+                                                <td>($6,420)</td>
+                                                <td class="highlight">$12,780</td>
+                                            </tr>
+                                            <tr>
+                                                <td>September</td>
+                                                <td>$28,000</td>
+                                                <td>($8,960)</td>
+                                                <td>($10,080)</td>
+                                                <td>($6,420)</td>
+                                                <td class="highlight">$2,540</td>
+                                            </tr>
+                                            <tr>
+                                                <td>October</td>
+                                                <td>$14,000</td>
+                                                <td>($4,480)</td>
+                                                <td>($5,040)</td>
+                                                <td>($6,420)</td>
+                                                <td style="color: var(--sams-orange);">($1,940)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>November</td>
+                                                <td>$9,000</td>
+                                                <td>($2,880)</td>
+                                                <td>($3,240)</td>
+                                                <td>($6,420)</td>
+                                                <td style="color: var(--sams-orange);">($3,540)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>December</td>
+                                                <td>$9,000</td>
+                                                <td>($2,880)</td>
+                                                <td>($3,240)</td>
+                                                <td>($6,420)</td>
+                                                <td style="color: var(--sams-orange);">($3,540)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
         </section>
 
         <div class="source-box">

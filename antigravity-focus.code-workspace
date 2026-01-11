@@ -1,0 +1,136 @@
+{
+    "folders": [
+        {
+            "name": "🚀 AI Agent Workspace",
+            "path": "."
+        },
+        {
+            "name": "📁 Documents",
+            "path": "../../../"
+        },
+        {
+            "name": "🖥️ Desktop",
+            "path": "../../../../Desktop"
+        },
+        {
+            "name": "📥 Downloads",
+            "path": "../../../../Downloads"
+        }
+    ],
+    "settings": {
+        // ============================================
+        // ANTIGRAVITY FOCUS MODE - COMPREHENSIVE SETTINGS
+        // ============================================
+        // --- Antigravity Focus Extension Settings ---
+        "antigravityFocus.enabled": true,
+        "antigravityFocus.autoCloseDelay": 2500,
+        "antigravityFocus.autoMaximizeChat": true,
+        "antigravityFocus.closeTabs": true,
+        "antigravityFocus.showNotifications": false,
+        "antigravityFocus.keepOpenPatterns": [
+            "**/.vscode/settings.json",
+            "**/keybindings.json",
+            "**/*.code-workspace"
+        ],
+        // --- Editor Tab Management ---
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.enablePreviewFromQuickOpen": false,
+        "workbench.editor.enablePreviewFromCodeNavigation": false,
+        "workbench.editor.limit.enabled": true,
+        "workbench.editor.limit.value": 2,
+        "workbench.editor.limit.perEditorGroup": true,
+        "workbench.editor.limit.excludeDirty": true,
+        "workbench.editor.closeEmptyGroups": true,
+        "workbench.editor.closeOnFileDelete": true,
+        "workbench.editor.revealIfOpen": true,
+        // --- Layout & Panel Settings ---
+        "workbench.panel.defaultLocation": "right",
+        "workbench.panel.opensMaximized": "always",
+        "workbench.sideBar.location": "left",
+        "workbench.activityBar.location": "hidden",
+        // --- Startup Behavior ---
+        "workbench.startupEditor": "none",
+        "window.restoreWindows": "none",
+        // --- Explorer Settings ---
+        "explorer.autoReveal": false,
+        "explorer.autoRevealExclude": {
+            "**/node_modules": true,
+            "**/.git": true,
+            "**/dist": true,
+            "**/build": true
+        },
+        "explorer.confirmDelete": false,
+        "explorer.confirmDragAndDrop": false,
+        // --- Window Behavior ---
+        "window.openFilesInNewWindow": "off",
+        "window.openFoldersInNewWindow": "off",
+        "window.confirmBeforeClose": "never",
+        // --- Search Settings ---
+        "search.quickOpen.includeHistory": true,
+        "search.showLineNumbers": true,
+        // --- Editor Appearance (Minimal) ---
+        "editor.minimap.enabled": false,
+        "breadcrumbs.enabled": false,
+        "editor.wordWrap": "on",
+        "editor.scrollBeyondLastLine": false,
+        "editor.renderWhitespace": "none",
+        "editor.guides.indentation": false,
+        "editor.lineNumbers": "off",
+        "editor.folding": false,
+        "editor.glyphMargin": false,
+        // --- Reduce Visual Noise ---
+        "editor.renderLineHighlight": "none",
+        "editor.occurrencesHighlight": "off",
+        "editor.selectionHighlight": false,
+        "editor.matchBrackets": "never",
+        // --- Gemini Code Assist Settings ---
+        "geminicodeassist.inlineSuggestions.enableAutoList": false,
+        "geminicodeassist.nextEditPredictions.enable": false,
+        // --- Git Settings (Reduce Prompts) ---
+        "git.confirmSync": false,
+        "git.enableSmartCommit": true,
+        "git.autofetch": true,
+        "git.openRepositoryInParentFolders": "always",
+        // --- Files Settings ---
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+        "files.confirmDelete": false,
+        // --- Terminal Settings ---
+        "terminal.integrated.confirmOnExit": "never",
+        "terminal.integrated.confirmOnKill": "never",
+        // --- Performance Optimizations ---
+        "files.watcherExclude": {
+            "**/.git/objects/**": true,
+            "**/.git/subtree-cache/**": true,
+            "**/node_modules/**": true,
+            "**/.hg/store/**": true,
+            "**/dist/**": true,
+            "**/build/**": true,
+            "**/.next/**": true,
+            "**/out/**": true
+        },
+        "search.exclude": {
+            "**/node_modules": true,
+            "**/bower_components": true,
+            "**/*.code-search": true,
+            "**/dist": true,
+            "**/build": true
+        },
+        // --- Telemetry (Reduce Background Activity) ---
+        "telemetry.telemetryLevel": "off",
+        // --- Extensions ---
+        "extensions.autoUpdate": false,
+        "extensions.autoCheckUpdates": false,
+        // --- Notifications ---
+        "workbench.notifications.doNotDisturbMode": true
+    },
+    "extensions": {
+        "recommendations": [
+            "cloudcode.geminicodeassist"
+        ]
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": []
+    }
+}
